@@ -11,11 +11,11 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const keyCount = Object.keys(req.body).length;
+  const key = Object.keys(req.body)
   if (keyCount > 0) {
     res.json({
       message: `A much more exciting POST request - you posted me some data which had ${keyCount} key${
-        keyCount > 1 ? "s" : ""
-      }`,
+        keyCount > 1 ? "s" : ""} the keys are ${key}`,
     });
   } else {
     res.json({
